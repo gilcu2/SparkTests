@@ -1,0 +1,4 @@
+# To debug spark from intellij
+# Create remote debug configuration in intellij, put your breakpoints, run this script and debug in intellij
+export SPARK_SUBMIT_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=7777
+spark-submit $*
