@@ -13,16 +13,15 @@ object WordCountStreaming {
   def main(args: Array[String]): Unit = {
 
     val conf = new SparkConf().setMaster("local[*]").setAppName("NetworkWordCount")
-    val ssc = new StreamingContext(conf, Seconds(1))
+    val ssc = new StreamingContext(conf, Minutes(1))
 
     ssc.checkpoint("/tmp/streaming")
-    val initialRDD = ssc.sparkContext.parallelize(List(("hello", 5), ("world", 1)))
 
     val lines = ssc.socketTextStream("localhost", 9999)
     val words = lines.flatMap(_.split(" "))
 
     val wordCounts = words.map(x => (x, 1))
-      .reduceByKeyAndWindow(_ + _, _ - _, Minutes(10), Seconds(5), 2)
+      .reduceByKeyAndWindow(_ + _, _ - _, Minutes(10), Minutes(1), 2)
 
     wordCounts.print()
 
