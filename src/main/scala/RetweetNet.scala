@@ -46,15 +46,17 @@ object RetweetNet {
     val retweets = status.filter(_.isRetweet)
 
     val retweetFromTo = retweets.map(x => {
-      val retwetter = x.getUser.getName
-      val retweeted = x.getRetweetedStatus.getUser.getName
+      val retwetter = x.getUser.getScreenName
+      val retweeted = x.getRetweetedStatus.getUser.getScreenName
       (RetweetFromTo(retwetter, retweeted), 1)
     })
 
     val retweetFromToCount: DStream[(RetweetFromTo, Int)] = retweetFromTo.reduceByKeyAndWindow(_ + _, _ - _, Minutes(60), Minutes(1), 2)
 
     //    val sorted=retweetFromToCount.transform(rdd=>rdd.takeOrdered(10)(Ordering[Int].reverse.on { x => x._2 }))
-    val sorted = retweetFromToCount.transform(rdd => rdd.sortBy(_._2))
+    val sorted = retweetFromToCount.transform(rdd =>
+      rdd.groupBy(_._1.retweeted).sortBy(_._2.size, false)
+        .map(x => (x._1, x._2.size, x._2.toSeq.sortBy(_._2).reverse.take(5).map(y => (y._1.retweeter, y._2)))))
 
     sorted.print()
 
