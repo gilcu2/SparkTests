@@ -11,6 +11,8 @@ libraryDependencies += "org.apache.spark" % "spark-mllib_2.11" % "2.0.2" % "prov
 //libraryDependencies += "org.apache.spark" % "spark-streaming-twitter_2.11" % "1.5.2" exclude("org.spark-project.spark", "unused")
 libraryDependencies += "org.apache.bahir" %% "spark-streaming-twitter" % "2.0.0" exclude("org.spark-project.spark", "unused")
 
+libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.1" % "test"
+
 mainClass in assembly := Some("SimpleSpark")
 
 assemblyMergeStrategy in assembly := {
