@@ -63,6 +63,7 @@ object RetweetNet {
 
     retweeteds.print()
 
+    // TODO print user id instead of graph index
     val retweeters: DStream[(VertexId, List[(String, Int)])] = retweetFromToCount.transform(rdd => {
       val mapIdent2Index = (rdd.map(_._1.retweeter) ++ rdd.map(_._1.retweeted)).distinct.zipWithIndex
       val nodes = mapIdent2Index.map(x => (x._2, x._1))
