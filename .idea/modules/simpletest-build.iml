@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="simpletest-build" external.linked.project.path="$MODULE_DIR$/../../project" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" sbt.imports="_root_.android.AndroidPlugin.autoImport._, _root_.sbtassembly.AssemblyPlugin.autoImport._, _root_.android.Plugin._, _root_.sbt.plugins.IvyPlugin, _root_.sbt.plugins.JvmPlugin, _root_.sbt.plugins.CorePlugin, _root_.sbt.plugins.JUnitXmlReportPlugin, _root_.sbt.plugins.Giter8TemplatePlugin, _root_.android.AndroidPlugin, _root_.sbtassembly.AssemblyPlugin, sbt._, Keys._, dsl._" sbt.resolvers="https://repo1.maven.org/maven2/|maven|public, /home/gilcu2/.ivy2/cache|ivy|Local cache" type="SBT_MODULE" version="4">
+<module external.linked.project.id="simpletest-build" external.linked.project.path="$MODULE_DIR$/../../project" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" sbt.imports="_root_.android.AndroidPlugin.autoImport._, _root_.sbtassembly.AssemblyPlugin.autoImport._, _root_.scoverage.ScoverageSbtPlugin.autoImport._, _root_.android.Plugin._, _root_.sbt.plugins.IvyPlugin, _root_.sbt.plugins.JvmPlugin, _root_.sbt.plugins.CorePlugin, _root_.sbt.plugins.JUnitXmlReportPlugin, _root_.sbt.plugins.Giter8TemplatePlugin, _root_.android.AndroidPlugin, _root_.sbtassembly.AssemblyPlugin, _root_.scoverage.ScoverageSbtPlugin, sbt._, Keys._, dsl._" sbt.resolvers="https://repo1.maven.org/maven2/|maven|public, /home/gilcu2/.ivy2/cache|ivy|Local cache" type="SBT_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../project/target/idea-classes" />
     <output-test url="file://$MODULE_DIR$/../../project/target/idea-test-classes" />
@@ -90,9 +90,11 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.scalactic/scalactic_2.10/bundles/scalactic_2.10-2.2.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.scalamacros/quasiquotes_2.10/jars/quasiquotes_2.10-2.0.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.scalaz/scalaz-core_2.10/bundles/scalaz-core_2.10-7.2.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.scoverage/scalac-scoverage-plugin_2.10/jars/scalac-scoverage-plugin_2.10-1.3.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.typelevel/macro-compat_2.10/jars/macro-compat_2.10-1.1.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/scala_2.10/sbt_0.13/com.eed3si9n/sbt-assembly/jars/sbt-assembly-0.14.3.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/scala_2.10/sbt_0.13/org.scala-android/sbt-android/jars/sbt-android-1.6.18.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/scala_2.10/sbt_0.13/org.scoverage/sbt-scoverage/jars/sbt-scoverage-1.5.0.jar!/" />
           <root url="jar://$USER_HOME$/.sbt/boot/scala-2.10.6/lib/jansi.jar!/" />
           <root url="jar://$USER_HOME$/.sbt/boot/scala-2.10.6/lib/jline.jar!/" />
           <root url="jar://$USER_HOME$/.sbt/boot/scala-2.10.6/lib/scala-compiler.jar!/" />
@@ -279,11 +281,13 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.scalactic/scalactic_2.10/srcs/scalactic_2.10-2.2.1-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.scalamacros/quasiquotes_2.10/srcs/quasiquotes_2.10-2.0.1-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.scalaz/scalaz-core_2.10/srcs/scalaz-core_2.10-7.2.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.scoverage/scalac-scoverage-plugin_2.10/srcs/scalac-scoverage-plugin_2.10-1.3.0-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.spire-math/jawn-parser_2.10/srcs/jawn-parser_2.10-0.6.0-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.spire-math/json4s-support_2.10/srcs/json4s-support_2.10-0.6.0-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.typelevel/macro-compat_2.10/srcs/macro-compat_2.10-1.1.0-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/scala_2.10/sbt_0.13/com.eed3si9n/sbt-assembly/srcs/sbt-assembly-0.14.3-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/scala_2.10/sbt_0.13/org.scala-android/sbt-android/srcs/sbt-android-1.6.18-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/scala_2.10/sbt_0.13/org.scoverage/sbt-scoverage/srcs/sbt-scoverage-1.5.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
