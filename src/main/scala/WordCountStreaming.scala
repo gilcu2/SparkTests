@@ -30,8 +30,6 @@ object WordCountStreaming {
 
   }
 
-  def countWords(lines: DStream[String]): DStream[(String, Int)] = countWords(lines, Seconds(10), Seconds(5))
-
   def countWords(lines: DStream[String], windowsDuration: Duration, slideDuration: Duration)
   : DStream[(String, Int)] = {
     val words = lines.flatMap(_.split(" "))
